@@ -56,7 +56,7 @@
   width: 36.9rem;
   min-width: 33.5rem;
   aspect-ratio: 1/1;
-  border-radius: 50%;
+  border-radius: var(--circle-radius);
   padding: 0 5rem;
   display: flex;
   justify-content: center;
@@ -154,7 +154,7 @@
   justify-content: flex-start;
   align-items: center;
   background: var(--main-color10);
-  border-radius: 10px;
+  border-radius: var(--card-radius);
   padding: 3.4rem 3rem;
   word-break: keep-all;
 }
@@ -170,7 +170,7 @@
   width: 9.3rem;
   aspect-ratio: 1/1;
   background: var(--white100);
-  border-radius: 50%;
+  border-radius: var(--circle-radius);
   overflow: hidden;
 }
 

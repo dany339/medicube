@@ -46,7 +46,7 @@
   width: 4rem;
   height: 13.6rem;
   background: var(--white100) url(../img/arrow-m-right.png) no-repeat 30% 50%;
-  border-radius: 5px;
+  border-radius: var(--btn-radius);
   cursor: pointer;
 }
 

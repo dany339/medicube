@@ -23,7 +23,7 @@
 .sns-item figure {
   width: 100%;
   aspect-ratio: 1/0.3094;
-  border-radius: 10px;
+  border-radius: var(--card-radius);
   overflow: hidden;
 }
 
