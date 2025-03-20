@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-/* * ------------ 지도 ------------ */
+/* ------------ 지도 ------------ */
 .map {
   position: relative;
   overflow: hidden;
@@ -37,22 +37,21 @@
   margin-top: var(--margin-l);
 }
 
-.btn-fold {
+.map-wrap .map-search .btn-fold {
   content: "";
   position: absolute;
-  top: 38%;
-  right: 63rem;
+  top: 42%;
+  right: 64rem;
   width: 4rem;
   height: 13.6rem;
-  background: var(--white100) url(../../img/arrow-m-right.png) no-repeat 30% 50%;
+  background: var(--white100) url(../../img/arrow-m-right.png) no-repeat 50%;
   border-radius: var(--btn-radius);
   cursor: pointer;
 }
 
-.map-search.on .btn-fold {
+.map-wrap .map-search.on .btn-fold {
   /* background-image: url(../../img/arrow-m-left.png); */
   transform: scale(-1);
-  background-position-x: 70%;
 }
 
 .map-info > li {
@@ -110,15 +109,14 @@ footer {
   }
 
   .map-wrap .map-search .btn-fold {
-    top: 0.2rem;
-    right: 50%;
-    height: 4rem;
-    transform: translateX(50%) rotate(90deg);
-    background-position-x: 50%;
+    top: -3rem;
+    right: 47%;
+    height: 11rem;
+    transform: rotate(90deg);
   }
 
   .map-wrap .map-search.on .btn-fold {
-    transform: translateX(50%) scale(-1) rotate(90deg);
+    transform: scale(-1) rotate(90deg);
   }
 
   footer {
