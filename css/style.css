@@ -1,7 +1,6 @@
 @charset 'utf-8';
 
 /* ------------ 슬라이드01 - 이미지(세로형) ------------ */
-
 .products {
   overflow: hidden;
 }
@@ -9,7 +8,7 @@
 .slider-products-wrap {
   margin-top: var(--margin-xl);
   display: flex;
-  gap: 2rem;
+  gap: var(--gap-m);
 }
 
 .products-txt-slider {
@@ -130,7 +129,6 @@
 }
 
 /* ------------ 슬라이드02 - 이미지(정사각형) ------------ */
-
 .preview {
   margin-top: var(--margin-xl);
 }
@@ -169,7 +167,6 @@
 }
 
 /* ------------ 슬라이드03 - 이미지(정사각형) ------------ */
-
 .review {
   margin-top: var(--margin-xl);
 }

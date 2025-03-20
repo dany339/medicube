@@ -20,10 +20,10 @@
   --font-header-footer: clamp(1.6rem, 0.99vw, 1.8rem);
   --font-title: clamp(5rem, 12.1146vw, 13.5rem);
   --font-sub-title: clamp(3.7rem, 2.7083vw, 5.2rem);
-  --font-xl: clamp(2.4rem, 4vw, 3rem);
+  --font-xl: clamp(2.3rem, 3vw, 3rem);
   --font-l: clamp(2rem, 1.1458vw, 2.2rem);
   --font-m: clamp(1.8rem, 1.5vw, 2rem);
-  --font-s: clamp(1.6rem, 0.99vw, 1.8rem);
+  --font-s: clamp(1.7rem, 0.99vw, 1.8rem);
 
   /* margin */
   --margin-xl: 12rem;
@@ -31,6 +31,17 @@
   --margin-m: 4rem;
   --margin-s: 3rem;
   --margin-xs: 2rem;
+
+  /* gap */
+  --gap-l: 4rem;
+  --gap-m: 2rem;
+  --gap-s: 1.5rem;
+  --gap-xs: 1rem;
+
+  /* border-radius */
+  --btn-radius: 5px;
+  --card-radius: 10px;
+  --circle-radius: 50%;
 
   /* transition */
   --trans-speed-nomal: 0.4s;
@@ -40,11 +51,6 @@
   --size-ico-sns: 3rem;
   --size-logo-height: 3.2rem;
   --size-logo-width: 15rem;
-
-  /* border-radius */
-  --btn-radius: 5px;
-  --card-radius: 10px;
-  --circle-radius: 50%;
 }
 
 ::selection {
@@ -94,7 +100,6 @@ body {
 }
 
 /* ------------inner------------ */
-
 .inner {
   width: 132rem;
   width: 89.5833%;
@@ -114,7 +119,6 @@ body {
 }
 
 /* ------------cursor------------ */
-
 .products-con-slider,
 .event-list,
 .event-swiper figure:hover,
@@ -299,6 +303,7 @@ nav {
 
 .gnb {
   display: flex;
+  gap: var(--gap-xs);
   font-weight: 700;
   font-size: var(--font-header-footer);
   color: var(--title-color);
@@ -310,7 +315,7 @@ nav {
 
 .gnb > li a {
   display: block;
-  padding: 0.6rem 2.4479vw;
+  padding: 0.6rem 2.6vw;
   color: var(--title-color);
 }
 
@@ -339,7 +344,6 @@ nav {
   position: absolute;
   left: 0;
   width: 100%;
-
   display: none;
   padding-top: 3.3rem;
 }
@@ -349,7 +353,7 @@ nav {
   font-weight: 500;
   word-break: keep-all;
   display: block;
-  padding: 1.2rem;
+  padding: 1.2rem 0;
   text-align: center;
   color: var(--text-color);
 }
@@ -357,7 +361,7 @@ nav {
 .util-menu {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: var(--gap-m);
 }
 
 .util-con {
@@ -411,25 +415,18 @@ nav {
 
 .sns-ico-list {
   display: flex;
-  gap: 1.2rem;
+  gap: var(--gap-s);
 }
 
 .btn-ico-sns {
   width: var(--size-ico-sns);
   height: var(--size-ico-sns);
   cursor: pointer;
+  background: transparent;
 }
 
-.btn-instagram {
-  background: url(../img/sns-ico-instargram.svg) no-repeat 50% / contain;
-}
-
-.btn-facebook {
-  background: url(../img/sns-ico-facebook.svg) no-repeat 50% / contain;
-}
-
-.btn-youtube {
-  background: url(../img/sns-ico-youtube.svg) no-repeat 50% / contain;
+.btn-ico-sns svg path {
+  fill: var(--main-color);
 }
 
 /* ------------ mobile-header ------------ */
@@ -510,7 +507,6 @@ nav {
 }
 
 /* ------------ footer ------------ */
-
 footer {
   overflow: hidden;
   margin-top: var(--margin-xl);
@@ -547,7 +543,7 @@ footer {
 .foot-info {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: var(--gap-l);
 }
 
 .foot-info a {
@@ -604,7 +600,7 @@ footer {
 @media (max-width: 1024px) {
   .foot-info {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: var(--gap-s);
   }
 
   .foot-con {
@@ -677,7 +673,6 @@ footer {
 }
 
 /* ------------ sec-title  ------------ */
-
 .sec-title {
   font-weight: 700;
   line-height: 1.5;

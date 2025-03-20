@@ -1,7 +1,6 @@
 @charset 'utf-8';
 
 /* ------------ 소식 목록 ------------ */
-
 .sns {
   margin-top: var(--margin-xl);
 }
@@ -12,7 +11,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: var(--gap-m);
 }
 
 .sns-item {
