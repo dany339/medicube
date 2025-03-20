@@ -44,10 +44,6 @@
   color: var(--white100);
 }
 
-.products-tab li.on:hover {
-  color: var(--main-color);
-}
-
 .products-tab li:hover {
   background: #f4c6d1;
   transition: var(--trans-speed-nomal);
@@ -174,7 +170,8 @@
   right: 3%;
   width: 4rem;
   aspect-ratio: 1/1;
-  background: url(../img/arrow-m-bottom.png) no-repeat 50%;
+  background: url(../img/arrow-m-right.png) no-repeat 50%;
+  transform: rotate(90deg);
   transition: var(--trans-speed-nomal);
 }
 
@@ -220,7 +217,7 @@
 }
 
 .answer-wrap {
-  margin-top: var(--margin-m);
+  margin-top: var(--margin-s);
   display: none;
   font-size: var(--font-s);
   word-break: keep-all;

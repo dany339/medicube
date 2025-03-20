@@ -374,7 +374,7 @@ nav {
 .btn-menu {
   width: 5rem;
   aspect-ratio: 1/1;
-  background: var(--white100);
+  background: transparent;
   display: none;
 }
 
@@ -589,7 +589,6 @@ footer {
 @media (max-width: 1440px) {
   .foot-list {
     flex-direction: column;
-    align-items: center;
   }
 
   .accredit {

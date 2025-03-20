@@ -141,7 +141,6 @@
   margin-top: var(--margin-s);
   display: flex;
   gap: var(--gap-m);
-  flex-direction: column;
 }
 
 .list-item li {
@@ -156,12 +155,7 @@
   word-break: keep-all;
 }
 
-.list-item li strong {
-  font-weight: 600;
-  color: var(--main-color);
-}
-
-.list-item figure {
+.list-item li figure {
   max-width: 9.3rem;
   min-width: 9.3rem;
   width: 9.3rem;
@@ -175,6 +169,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-xs);
+}
+
+.list-txt strong {
+  font-size: var(--font-l);
+  font-weight: 600;
+  color: var(--main-color);
 }
 
 .list-txt p {
@@ -248,7 +248,7 @@ footer {
   margin-top: 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 825px) {
   .point-pic {
     display: none;
   }
