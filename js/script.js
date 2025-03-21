@@ -297,6 +297,29 @@ $(document).ready(function () {
   openFirstAnswerOnResize();
 });
 
+/* 목록02 ---------------------------------------------- */
+const $checkList = $(".check-list");
+
+$checkList.on("mousedown", function (e) {
+  isDown = true;
+  $(this).addClass("active");
+  startX = e.pageX - $(this).offset().left;
+  scrollLeft = $(this).scrollLeft();
+});
+
+$checkList.on("mouseup", function () {
+  isDown = false;
+  $(this).removeClass("active");
+});
+
+$checkList.on("mousemove", function (e) {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - $(this).offset().left;
+  const walk = (x - startX) * 2;
+  $(this).scrollLeft(scrollLeft - walk);
+});
+
 /* 지도 ---------------------------------------------- */
 const $mapSearch = $(".map-search");
 const $btnFold = $(".btn-fold");
