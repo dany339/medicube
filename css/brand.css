@@ -18,8 +18,8 @@
 
 .vison-title h4 {
   font: 8.2rem/1.1 "Poppins", sans-serif;
-  font-size: clamp(4.5rem, 6vw, 8.2rem); /* 여기도 어떻게 할지 정해! */
-  font-weight: 600;
+  font-size: clamp(4.5rem, 7.5vw, 8.2rem); /* 여기도 어떻게 할지 정해! */
+  font-weight: var(--font-weight-bold);
   color: var(--main-color);
 }
 
@@ -104,7 +104,7 @@
 
 .check-list li dt {
   font-size: var(--font-xl);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--white100);
   transition: var(--trans-speed-nomal);
   transform: translateY(110%);
@@ -173,7 +173,7 @@
 
 .list-txt strong {
   font-size: var(--font-l);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--main-color);
 }
 

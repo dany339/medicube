@@ -74,15 +74,28 @@ visualTl.from(".visual-title p", { y: 100, autoAlpha: 0 }, "-=0.6");
 if ($(".products-con-slider").length) {
   const $productsConSlider = new Swiper(".products-con-slider", {
     loop: true,
-    slidesPerView: "auto",
-    spaceBetween: 21,
-    freeMode: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
     autoplay: {
-      delay: 4000,
+      delay: 5000,
     },
     pagination: {
       el: ".swiper-pagination",
       type: "progressbar",
+    },
+    breakpoints: {
+      1440: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
     },
   });
 
@@ -90,11 +103,8 @@ if ($(".products-con-slider").length) {
     loop: true,
     effect: "fade",
     autoplay: {
-      delay: 4000,
+      delay: 5000,
     },
-    // controller: {
-    //   control: $productsConSlider,
-    // },
     thumbs: {
       swiper: $productsConSlider,
     },
@@ -168,8 +178,34 @@ if ($(".review-slider").length) {
 }
 
 /* 제품 목록 -카테고리 ---------------------------------------------- */
+const $productsTab = $(".products-tab");
 const $productsTabMenu = $(".products-tab > li");
 const $productsTabCon = $(".products-con");
+
+// 마우스 드래그 스크롤 기능
+let isDown = false;
+let startX;
+let scrollLeft;
+
+$productsTab.on("mousedown", function (e) {
+  isDown = true;
+  $(this).addClass("active");
+  startX = e.pageX - $(this).offset().left;
+  scrollLeft = $(this).scrollLeft();
+});
+
+$productsTab.on("mouseup", function () {
+  isDown = false;
+  $(this).removeClass("active");
+});
+
+$productsTab.on("mousemove", function (e) {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - $(this).offset().left;
+  const walk = (x - startX) * 2;
+  $(this).scrollLeft(scrollLeft - walk);
+});
 
 productsTabAction(0);
 
@@ -191,8 +227,29 @@ function productsTabAction(index) {
 }
 
 /* 질문 목록 - 카테고리 ---------------------------------------------- */
+const $faqTab = $(".faq-tab");
 const $faqTabMenu = $(".faq-tab > li");
 const $faqTabCon = $(".info-wrap > ul");
+
+$faqTab.on("mousedown", function (e) {
+  isDown = true;
+  $(this).addClass("active");
+  startX = e.pageX - $(this).offset().left;
+  scrollLeft = $(this).scrollLeft();
+});
+
+$faqTab.on("mouseup", function () {
+  isDown = false;
+  $(this).removeClass("active");
+});
+
+$faqTab.on("mousemove", function (e) {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - $(this).offset().left;
+  const walk = (x - startX) * 2;
+  $(this).scrollLeft(scrollLeft - walk);
+});
 
 faqTabAction(0);
 
@@ -214,24 +271,30 @@ function faqTabAction(index) {
 }
 
 /* 질문 목록(faq) ---------------------------------------------- */
-const $question = $(".info-wrap > ul > li");
-const $answer = $(".answer-wrap");
+$(document).ready(function () {
+  const $question = $(".info-wrap > ul > li");
+  const $answer = $(".answer-wrap");
+  const duration = 300;
 
-$question.on("click", function () {
-  // 선택한 놈을 기준으로, 다른 놈들은 on클래스 삭제
-  $(this).siblings().removeClass("on");
+  $question.on("click", function () {
+    $(this).siblings().removeClass("on");
+    $(this).toggleClass("on");
+    $(this).siblings().find($answer).stop().slideUp(duration);
+    $(this).find($answer).stop().slideToggle(duration);
+  });
 
-  // $(this).addClass("on");
-  // 선택한 놈을 기준으로 on클래스를 토글
-  $(this).toggleClass("on");
+  // 1024px에서 첫 번째 answer-wrap 자동으로 열기
+  function openFirstAnswerOnResize() {
+    if (window.innerWidth <= 1024) {
+      $question.removeClass("on");
+      $question.first().addClass("on");
+      $answer.stop().slideUp(duration);
+      $question.first().find($answer).stop().slideDown(duration);
+    }
+  }
 
-  // 선택한 놈의 형제, 하위에 있는 답변은 올리고
-  // stop()  <-- 여러개 예약되어 있어도 한 번만 작동
-  $(this).siblings().find($answer).stop().slideUp(duration);
-
-  // $(this).find($answer).slideDown(duration);
-  // 선택한 놈의 자손중 답변을 찾아서 슬라이드 토글
-  $(this).find($answer).stop().slideToggle(duration);
+  // 페이지 로드
+  openFirstAnswerOnResize();
 });
 
 /* 지도 ---------------------------------------------- */
