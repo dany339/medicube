@@ -1,3 +1,6 @@
+/* 모바일에서 hover 효과 대체 ---------------------------------------------- */
+document.addEventListener("touchstart", function () {}, true);
+
 /* 헤더 - gnb ---------------------------------------------- */
 const $header = $("header");
 const $menu = $(".gnb > li");
@@ -24,12 +27,12 @@ const $mobileGnb = $(".mobile-gnb > li > a");
 
 $btnMenu.on("click", function () {
   $mobileMenu.addClass("on");
-  $("body").css("overflow", "hidden"); // 스크롤 방지
+  // $("body").css("overflow", "hidden"); // 스크롤 방지
 });
 
 $btnClose.on("click", function () {
   $mobileMenu.removeClass("on");
-  $("body").css("overflow", "auto"); // 스크롤 복구
+  // $("body").css("overflow", "auto"); // 스크롤 복구
 });
 
 $mobileGnb.on("click", function (e) {
@@ -41,7 +44,7 @@ $mobileGnb.on("click", function (e) {
 $(document).on("click", function (e) {
   if (!$(e.target).closest(".mobile-menu, .btn-menu").length) {
     $mobileMenu.removeClass("on");
-    $("body").css("overflow", "auto");
+    // $("body").css("overflow", "auto");
   }
 });
 
@@ -74,28 +77,15 @@ visualTl.from(".visual-title p", { y: 100, autoAlpha: 0 }, "-=0.6");
 if ($(".products-con-slider").length) {
   const $productsConSlider = new Swiper(".products-con-slider", {
     loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
+    slidesPerView: "auto",
+    spaceBetween: 21,
+    freeMode: true,
     autoplay: {
-      delay: 5000,
+      delay: 4000,
     },
     pagination: {
       el: ".swiper-pagination",
       type: "progressbar",
-    },
-    breakpoints: {
-      1440: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-      1024: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
     },
   });
 
@@ -103,8 +93,11 @@ if ($(".products-con-slider").length) {
     loop: true,
     effect: "fade",
     autoplay: {
-      delay: 5000,
+      delay: 4000,
     },
+    // controller: {
+    //   control: $productsConSlider,
+    // },
     thumbs: {
       swiper: $productsConSlider,
     },
@@ -194,6 +187,11 @@ $productsTab.on("mousedown", function (e) {
   scrollLeft = $(this).scrollLeft();
 });
 
+$productsTab.on("mouseleave", function () {
+  isDown = false;
+  $(this).removeClass("active");
+});
+
 $productsTab.on("mouseup", function () {
   isDown = false;
   $(this).removeClass("active");
@@ -236,6 +234,11 @@ $faqTab.on("mousedown", function (e) {
   $(this).addClass("active");
   startX = e.pageX - $(this).offset().left;
   scrollLeft = $(this).scrollLeft();
+});
+
+$faqTab.on("mouseleave", function () {
+  isDown = false;
+  $(this).removeClass("active");
 });
 
 $faqTab.on("mouseup", function () {
@@ -307,6 +310,11 @@ $checkList.on("mousedown", function (e) {
   scrollLeft = $(this).scrollLeft();
 });
 
+$checkList.on("mouseleave", function () {
+  isDown = false;
+  $(this).removeClass("active");
+});
+
 $checkList.on("mouseup", function () {
   isDown = false;
   $(this).removeClass("active");
@@ -345,7 +353,6 @@ $btnFold.on("click", function () {
 AOS.init();
 
 /* top / talk 버튼---------------------------------------------- */
-
 const btnTop = document.querySelector(".btn-top");
 const btnTalk = document.querySelector(".btn-talk");
 const html = document.documentElement;

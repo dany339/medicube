@@ -40,7 +40,7 @@
 }
 
 .products-text-card h3 {
-  font-size: clamp(5rem, 5vw, 9rem); /* 여기 어떻게 할지 고민 */
+  font-size: clamp(5rem, 5vw, 9rem);
   line-height: 1.1;
   font-weight: var(--font-weight-bold);
   color: var(--title-color);
@@ -169,18 +169,6 @@
 /* ------------ 슬라이드03 - 이미지(정사각형) ------------ */
 .review {
   margin-top: var(--margin-xl);
-}
-
-.review-slider-wrap {
-  width: 100%;
-}
-
-.review-slider {
-  width: 100%;
-}
-
-.review .swiper-wrapper {
-  width: 100%;
 }
 
 .review-slider {

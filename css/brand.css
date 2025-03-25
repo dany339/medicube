@@ -2,7 +2,7 @@
 
 /* ------------ 비전 ------------ */
 .vision {
-  box-shadow: 0px 0px 30px var(--main-color20);
+  box-shadow: 0px 0px 30px var(--main-color10);
   padding: 6rem 0 14.2rem 0;
 }
 
@@ -14,11 +14,12 @@
 
 .visual-sub-title {
   color: var(--main-color);
+  font-weight: var(--font-weight-medium);
 }
 
 .vison-title h4 {
   font: 8.2rem/1.1 "Poppins", sans-serif;
-  font-size: clamp(4.5rem, 7.5vw, 8.2rem); /* 여기도 어떻게 할지 정해! */
+  font-size: clamp(4.5rem, 7.5vw, 8.2rem);
   font-weight: var(--font-weight-bold);
   color: var(--main-color);
 }
@@ -31,7 +32,7 @@
 
 @media (max-width: 768px) {
   .vison-title p {
-    width: 80%;
+    width: 86%;
   }
 }
 
@@ -65,7 +66,7 @@
   position: relative;
   cursor: pointer;
   word-break: keep-all;
-  box-shadow: 0px 0px 30px rgba(200, 0, 47, 0.25);
+  box-shadow: 0px 0px 30px var(--black10);
 }
 
 .check-list li:nth-child(1) {
@@ -116,7 +117,7 @@
 }
 
 .check-list li dd {
-  margin-top: var(--margin-s);
+  margin-top: var(--margin-xs);
   transform: translateY(350%);
   color: var(--white70);
   transition: var(--trans-speed-nomal);
@@ -132,7 +133,7 @@
   }
 }
 
-/* ------------ 목록01 - 1 ------------ */
+/* ------------ 목록01 ------------ */
 .list {
   margin-top: var(--margin-xl);
 }
@@ -141,6 +142,7 @@
   margin-top: var(--margin-s);
   display: flex;
   gap: var(--gap-m);
+  flex-direction: column;
 }
 
 .list-item li {
@@ -149,10 +151,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background: var(--main-color10);
+  background: #f8f8f8;
   border-radius: var(--card-radius);
-  padding: 3.4rem 3rem;
   word-break: keep-all;
+  padding: 3rem;
 }
 
 .list-item li figure {
@@ -160,7 +162,6 @@
   min-width: 9.3rem;
   width: 9.3rem;
   aspect-ratio: 1/1;
-  background: var(--white100);
   border-radius: var(--circle-radius);
   overflow: hidden;
 }
@@ -172,13 +173,12 @@
 }
 
 .list-txt strong {
-  font-size: var(--font-l);
   font-weight: var(--font-weight-semibold);
   color: var(--main-color);
 }
 
 .list-txt p {
-  font-size: var(--font-s);
+  font-size: var(--font-m);
 }
 
 @media (max-width: 425px) {
@@ -200,6 +200,11 @@
 .point-con {
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
+}
+
+.point-txt {
+  align-self: flex-start;
 }
 
 .point-con p {
@@ -234,9 +239,11 @@
 
 .point-pic {
   width: 30.2083vw;
-  min-width: 34.5rem;
+  max-width: 54rem;
+  min-width: 36.5rem;
   aspect-ratio: 1/0.931;
   overflow: hidden;
+  align-self: flex-end;
 }
 
 .point-pic img {
@@ -244,7 +251,6 @@
 }
 
 footer {
-  /*  footer와 point-pic의 간격 조정을 위해 footer의 마진을 0으로 재부여 */
   margin-top: 0;
 }
 

@@ -15,7 +15,7 @@
 }
 
 .sns-item {
-  width: 49%;
+  width: 46%;
   margin-top: 3.125vw; /* var(--margin-l) */
 }
 
@@ -27,11 +27,12 @@
 }
 
 .sns-item:hover figure img {
-  transform: scale(110%);
+  transform: var(--scale-img);
 }
 
 .sns-txt p {
   margin-top: var(--margin-xs);
+  padding-left: 1rem;
   /* font-size: var(--font-m); */
   font-size: clamp(1.6rem, 3.5vw, 2rem);
   font-weight: var(--font-weight-bold);
@@ -42,6 +43,10 @@
   .sns-item {
     width: 70%;
     text-align: center;
+  }
+
+  .sns-txt p {
+    padding: 0;
   }
 }
 
